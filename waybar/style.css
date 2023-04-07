@@ -1,0 +1,106 @@
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "IBM Plex Mono", "Font Awesome 5 Free", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: transparent;
+  border-bottom: none;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 0.5rem 0.7rem;
+  margin: 0px 0;
+  background: #282a36;
+}
+
+#workspaces button.focused {
+  color: #61afef;
+}
+
+#workspaces button.urgent {
+  background-color: #1f2329;
+}
+
+#mode {
+  background-color: #1f2329;
+  color: #ffa000;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-linuxlogo {
+  padding: 0.5rem 0.7rem;
+  color: #ffffff;
+  margin: 0px 0;
+  background-color: #1f2329;
+}
+
+#clock {
+  background-color: #61afef;
+  color: #282a36;
+  margin-right: 0px;
+}
+
+#battery.charging {
+  color: #98c379;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #e06c75;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network {
+  /* color: grey; */
+}
+
+#network.disconnected {
+  color: #e06c75;
+}
+
+#pulseaudio.icon {
+  background: #1f2329;
+  color: #000;
+  margin-left: 0px;
+}
+
+#tray {
+  font-size: 22px;
+}
