@@ -4,4 +4,4 @@ cp -r ~/.config/nwg-bar/ ./
 cp -r ~/.config/sway/ ./
 cp -r ~/.config/tmux/ ./
 cp -r ~/.config/waybar/ ./
-cp -r ~/.config/zsh/ ./
+rsync -a ~/.config/zsh/ ./zsh/ --exclude zsh-plugins

@@ -35,3 +35,11 @@ znap source zsh-users/zsh-completions
 znap source zsh-users/zsh-syntax-highlighting
 
 eval $(thefuck --alias)
+
+# pnpm
+export PNPM_HOME="/home/sjaak/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

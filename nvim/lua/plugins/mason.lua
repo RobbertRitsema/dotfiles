@@ -1,6 +1,6 @@
 local M = {
 	"williamboman/mason.nvim",
-  lazy = false,
+	lazy = false,
 	build = ":MasonUpdate",
 }
 

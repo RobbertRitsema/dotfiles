@@ -23,9 +23,12 @@ end
 
 local sources = {
 	-- formatting
-	b.formatting.prettierd,
+	--
+	with_root_file(b.formatting.prettierd, ".prettierrc.json"),
+	with_root_file(b.formatting.eslint_d, ".eslintrc"),
 	b.formatting.black.with({ extra_args = { "--fast" } }),
 	b.formatting.isort,
+
 	with_root_file(b.formatting.stylua, "stylua.toml"),
 
 	-- diagnostics
