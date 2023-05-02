@@ -14,7 +14,8 @@ local M = {
 }
 
 M.init = function()
-local actions = require("telescope.actions")
+  local actions = require("telescope.actions")
+
   keymaps()
 
   require("telescope").setup{

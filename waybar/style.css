@@ -2,8 +2,7 @@
   border: none;
   border-radius: 0;
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "IBM Plex Mono", "Font Awesome 5 Free", Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Source Code Pro", "Font Awesome 5 Free", Arial, sans-serif;
   font-size: 13px;
   min-height: 0;
   font-weight: bold;
@@ -54,7 +53,7 @@ window#waybar.hidden {
 #idle_inhibitor,
 #mpd,
 #custom-linuxlogo {
-  padding: 0.5rem 0.7rem;
+  padding: 0.5rem 0.8rem;
   color: #ffffff;
   margin: 0px 0;
   background-color: #1f2329;
