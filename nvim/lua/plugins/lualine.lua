@@ -1,9 +1,9 @@
 local M = {
 	"nvim-lualine/lualine.nvim",
 	event = "BufReadPre",
-	lazy = false,
-	dependecies = {
-		"kyazdani42/nvim-web-devicons",
+	-- lazy = false,
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
 	},
 }
 
