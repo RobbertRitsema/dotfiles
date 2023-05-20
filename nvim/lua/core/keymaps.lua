@@ -27,6 +27,10 @@ map("n", "<leader>q", ":q<CR>")
 -- Keep cursor in place when joining lines
 map("n", "J", "mzJ`z")
 
+-- better up and down
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
 -- Don't put deleted text in default register
 map("n", "x", '"_x')
 map("v", "x", '"_x')
@@ -55,24 +59,17 @@ map("n", "<", "<<")
 map("n", ">", ">>")
 
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "goto declaration [LSP]" })
--- See `:help vim.lsp.*` for documentation on any of the below functions
-map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "goto declaration [LSP]" })
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "goto definition [LSP]" })
 map("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "hover information [LSP]" })
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "goto implementation [LSP]" })
 map("n", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "signature help [LSP]" })
-map("n", "gR", '<cmd>lua require("lsp.rename").rename()<CR>', { desc = "rename [LSP]" })
-map("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
-map("n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
-map("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-map("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "goto type definition [LSP]" })
-map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "rename [LSP]" })
+map("i", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "signature help [LSP]" })
+map("n", "<leader>rn", '<cmd>lua require("lsp.rename").rename()<CR>', { desc = "rename [LSP]" })
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "code actions [LSP]" })
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "goto reference [LSP]" })
 
 map("n", "<leader>lt", "<cmd>lua require'lsp.diag'.toggle()<CR>", { desc = "toggle virtual text [LSP]" })
 
-map("n", "<leader>lR", '<cmd>lua require("lsp.rename").rename()<CR>', { desc = "rename [LSP]" })
 map(
 	"n",
 	"<leader>ll",
