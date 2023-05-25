@@ -1,11 +1,11 @@
 -- Import Lua modules
-require("core/options")
-require("core/keymaps")
-require("core/autocmds")
+require "core/options"
+require "core/keymaps"
+require "core/autocmds"
 
-require("lazy_init")
+require "lazy_init"
 
-require("core/colors")
+require "core/colors"
 
 -- require("plugins/alpha-nvim")
 -- require("plugins/lualine")

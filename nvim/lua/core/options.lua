@@ -57,6 +57,12 @@ opt.swapfile = false -- Don't use swapfile
 opt.undofile = true -- keep persistent undo file
 opt.undodir = vim.fn.expand "~/.local/share/nvim/undo" -- keep persistent undo file
 
+-----------------------------------------------------------
+-- Spelling
+-----------------------------------------------------------
+opt.spell = true
+opt.spelllang = { "en_us" }
+vim.opt.spelloptions = "camel"
 
 -----------------------------------------------------------
 -- Startup
