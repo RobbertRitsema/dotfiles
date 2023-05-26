@@ -13,34 +13,23 @@ local with_diagnostics_code = function(builtin)
   }
 end
 
-local with_root_file = function(builtin, file)
-  return builtin.with {
-    condition = function(utils)
-      if utils.path.exists(utils.path.join(utils.root_dir, file)) then
-        return builtin
-      end
-    end,
-  }
-end
 
 local sources = {
   -- formatting
-  with_root_file(b.formatting.prettierd, ".prettierrc.json"),
-  b.formatting.eslint_d,
+  -- TODO: Should only format if specified by project
+  b.formatting.prettierd,
 
-  b.formatting.black.with{ extra_args = { "--fast" } },
+  -- TODO: Should only format if specified by project
+  b.formatting.black.with { extra_args = { "--fast" } },
+  -- TODO: Should only format if specified by project
   b.formatting.isort,
 
+  -- TODO: Should only format if specified by project
   b.formatting.stylua,
 
   -- diagnostics
   b.diagnostics.flake8,
   b.diagnostics.tsc,
-
-  b.code_actions.cspell,
-
-  -- hover
-  b.hover.dictionary,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
