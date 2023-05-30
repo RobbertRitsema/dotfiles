@@ -7,7 +7,6 @@ local M = {
 
 M.config = function()
   require("Comment").setup {
-
     padding = true, -- Add a space b/w comment and the line
     sticky = true, -- Whether the cursor should stay at its position
 

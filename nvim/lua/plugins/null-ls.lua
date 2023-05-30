@@ -13,7 +13,6 @@ local with_diagnostics_code = function(builtin)
   }
 end
 
-
 local sources = {
   -- formatting
   -- TODO: Should only format if specified by project

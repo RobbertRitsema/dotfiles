@@ -71,8 +71,8 @@ map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "goto reference
 map("n", "<leader>lt", "<cmd>lua require'lsp.diag'.toggle()<CR>", { desc = "toggle virtual text [LSP]" })
 
 map(
-	"n",
-	"<leader>ll",
-	'<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "rounded" })<CR>',
-	{ desc = "show line diagnostic [LSP]" }
+  "n",
+  "<leader>ll",
+  '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "rounded" })<CR>',
+  { desc = "show line diagnostic [LSP]" }
 )

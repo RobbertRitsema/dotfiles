@@ -21,16 +21,21 @@ if not ok then
 end
 
 lazy.setup("plugins", {
-  defaults = { lazy = true },
+  defaults = {
+    lazy = true,
+  },
   dev = {
     path = "~/.local/nvim-plugins",
-    -- this is a blanket dev for all matching plugins since it
-    -- doesn't check for the existence of the directory we now
-    -- use the 'dev' property individually instead
-    -- patterns = { "ibhagwan" },
   },
-  install = { colorscheme = { "everforest", "lua-embark" } },
-  checker = { enabled = false },
+  install = {
+    colorscheme = {
+      "everforest",
+      "lua-embark",
+    },
+  },
+  checker = {
+    enabled = false,
+  },
   ui = {
     border = "rounded",
     custom_keys = {

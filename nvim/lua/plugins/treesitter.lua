@@ -3,7 +3,7 @@ local M = {
   lazy = false,
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
-  }
+  },
 }
 
 M.init = function()
