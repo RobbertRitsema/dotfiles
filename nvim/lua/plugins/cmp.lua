@@ -11,6 +11,34 @@ local M = {
   },
 }
 
+local kind_icons = {
+  Text = "",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰇽",
+  Variable = "󰂡",
+  Class = "󰠱",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
+  Reference = "",
+  Folder = "󰉋",
+  EnumMember = "",
+  Constant = "󰏿",
+  Struct = "",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = "󰅲",
+}
+
 M.config = function()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
@@ -32,6 +60,29 @@ M.config = function()
       keyword_length = 1,
     },
 
+    formatting = {
+      max_width = 0,
+      duplicates = {
+        buffer = 1,
+        path = 1,
+        nvim_lsp = 0,
+        luasnip = 1,
+      },
+      duplicates_default = 0,
+      -- format = function(entry, vim_item)
+      --   -- Kind icons
+      --   vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.menu)
+      --   -- Source
+      --   vim_item.menu = ({
+      --     buffer = "[Buffer]",
+      --     nvim_lsp = "[LSP]",
+      --     luasnip = "[LuaSnip]",
+      --     nvim_lua = "[Lua]",
+      --   })[entry.source.name]
+      --   return vim_item
+      -- end
+    },
+
     sources = {
       { name = "nvim_lsp_signature_help" },
       { name = "nvim_lsp" },
@@ -39,11 +90,6 @@ M.config = function()
       { name = "path" },
       { name = "buffer" },
     },
-
-    -- we use 'comleteopt=...,noselect' but we still want cmp to autoselect
-    -- an item if recommended by the LSP server (try with gopls, rust_analyzer)
-    -- uncomment to disable
-    -- preselect = cmp.PreselectMode.None,
 
     mapping = {
       ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
