@@ -11,6 +11,7 @@ local M = {
   dependencies = {
     { "nvim-lua/plenary.nvim" },
   },
+  event = "VeryLazy",
 }
 
 M.init = function()
