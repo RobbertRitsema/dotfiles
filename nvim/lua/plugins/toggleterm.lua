@@ -19,6 +19,14 @@ end
 local M = {
   "akinsho/toggleterm.nvim",
   event = "VeryLazy",
+  cmd = {
+    "ToggleTerm",
+    "TermExec",
+    "ToggleTermToggleAll",
+    "ToggleTermSendCurrentLine",
+    "ToggleTermSendVisualLines",
+    "ToggleTermSendVisualSelection",
+  },
 }
 
 M.config = function()

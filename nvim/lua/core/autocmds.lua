@@ -13,9 +13,9 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 augroup("setIndent", { clear = true })
 
 autocmd("Filetype", {
-	group = "setIndent",
-	pattern = { "vue", "css", "scss", "javascript", "typescript", "yaml", "lua", "json" },
-	command = "setlocal shiftwidth=2 tabstop=2",
+  group = "setIndent",
+  pattern = { "vue", "css", "scss", "javascript", "typescript", "yaml", "lua", "json" },
+  command = "setlocal shiftwidth=2 tabstop=2",
 })
 
 -- Save cursor position when quitting file

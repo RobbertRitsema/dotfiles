@@ -3,7 +3,18 @@ local M = {
   lazy = false,
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    "JoosepAlviste/nvim-ts-context-commentstring",
   },
+  cmd = {
+    "TSInstall",
+    "TSUninstall",
+    "TSUpdate",
+    "TSUpdateSync",
+    "TSInstallInfo",
+    "TSInstallSync",
+    "TSInstallFromGrammar",
+  },
+  event = "User FileOpened",
 }
 
 M.init = function()
@@ -38,8 +49,24 @@ M.config = function()
       enable = true,
     },
 
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false,
+      -- config = {
+      --   -- Languages that have a single comment style
+      --   typescript = "// %s",
+      --   css = "/* %s */",
+      --   scss = "/* %s */",
+      --   html = "<!-- %s -->",
+      --   svelte = "<!-- %s -->",
+      --   vue = "<!-- %s -->",
+      --   json = "",
+      -- },
+    },
+
     indent = {
       enable = true,
+      disable = { "yaml", "python" },
     },
   }
 end

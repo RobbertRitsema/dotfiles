@@ -1,8 +1,7 @@
 local M = {
   "numToStr/Comment.nvim",
-  event = "VeryLazy",
-  -- TODO: doesn't work in visual mode
-  -- keys = { "gc", "gb" },
+  keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+  event = "User FileOpened",
 }
 
 M.config = function()

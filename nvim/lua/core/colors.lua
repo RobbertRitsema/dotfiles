@@ -37,4 +37,4 @@ vim.g.everforest_cursor = "auto"
 
 vim.g.everforest_ui_contrast = "low"
 
-vim.cmd([[colorscheme everforest]])
+vim.cmd [[colorscheme everforest]]

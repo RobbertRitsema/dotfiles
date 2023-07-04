@@ -31,7 +31,6 @@ local function make_config()
   end
 
   return {
-    -- on_attach = require("lsp.on_attach").on_attach,
     capabilities = capabilities,
   }
 end

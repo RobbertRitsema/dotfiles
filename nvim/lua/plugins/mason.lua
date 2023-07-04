@@ -1,14 +1,20 @@
 local M = {
   "williamboman/mason.nvim",
-  lazy = false,
-  build = ":MasonUpdate",
+  cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+  build = function()
+    pcall(function()
+      require("mason-registry").refresh()
+    end)
+  end,
+  event = "User FileOpened",
+  lazy = true,
 }
 
 function M.config()
   require("mason").setup {
     ui = {
-      border = "rounded"
-    }
+      border = "rounded",
+    },
   }
 end
 
