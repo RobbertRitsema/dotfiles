@@ -8,3 +8,4 @@ DIRSTACKSIZE=10
 eval "$(dircolors -b)"
 
 zstyle ':completion:*:default'               list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' completer _expand_alias _complete _ignored

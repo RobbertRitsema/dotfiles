@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
-alias ll='exa -la'
-alias ls='exa'
+alias ll='eza -la'
+alias ls='eza'
 
 alias mkx='chmod +x'
 alias mkdir='mkdir -pv'

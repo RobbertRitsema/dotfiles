@@ -48,13 +48,6 @@ zle -N edit-command-line
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# # use vi-mode
-# bindkey -v
-
-# # v to edit the command line (standard behaviour)
-# autoload -Uz edit-command-line
-# bindkey -M vicmd 'v' edit-command-line
-
 # Ctrl-p/n for navigate history (standard behaviour)
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -66,9 +59,6 @@ bindkey '^l' forward-word
 # Ctrl-w delete word last word
 bindkey '^w' backward-kill-word
 
-# Ctrl-/ to perform backward search in history
-bindkey '^_' history-incremental-search-backward
-
 # Ctrl-a/e to move to beginning/end of line
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
@@ -76,12 +66,6 @@ bindkey '^e' end-of-line
 # Ctrl-j/k do the same as arrow keys
 bindkey "^K" up-line-or-beginning-search
 bindkey "^J" down-line-or-beginning-search
-
-# Ctrl-z toggles control flow
-bindkey '^Z' fancy-ctrl-z
-
-# Alt-Enter to enter a line break without running the command
-bindkey '^[^M' self-insert-unmeta
 
 # space expands aliases
 bindkey -M viins "^ " magic-space

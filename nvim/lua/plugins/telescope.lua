@@ -1,33 +1,18 @@
-local function keymaps()
-  local map = vim.keymap.set
-  local builtin = require "telescope.builtin"
-
-  map("n", "<C-p>", builtin.find_files, {})
-  map("n", "<C-f>", builtin.live_grep, {})
-end
-
-local M = {
+return {
   "nvim-telescope/telescope.nvim",
-  dependencies = {
-    { "nvim-lua/plenary.nvim" },
-  },
-  event = "VeryLazy",
-}
 
-M.init = function()
-  local actions = require "telescope.actions"
-
-  keymaps()
-
-  require("telescope").setup {
-    defaults = {
-      mappings = {
-        i = {
-          ["<esc>"] = actions.close,
-        },
+  keys = function()
+    return {
+      {
+        "<C-p>",
+        LazyVim.pick("files"),
+        desc = "Find files",
       },
-    },
-  }
-end
-
-return M
+      {
+        "<C-f>",
+        LazyVim.pick("live_grep"),
+        desc = "Find stuff in files",
+      },
+    }
+  end,
+}
